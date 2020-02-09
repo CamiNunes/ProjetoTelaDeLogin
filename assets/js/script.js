@@ -9,7 +9,16 @@ document.querySelector('#form-login').addEventListener('submit', e => {
         password
     };
 
-    console.log(json);
+    if(!json.email){ //Se não tem nada dentro docampo email
+        console.error("O campo de email deve ser preenchido");
+    } else if(!json.password){
+        console.error("O campo de senha deve ser preenchido");    
+    } else{
+        console.info("Dados enviados com sucesso!");
+    }
+
+
+/*    console.log(json);
 
     let stringJSON = JSON.stringify(json);
 
@@ -17,6 +26,6 @@ document.querySelector('#form-login').addEventListener('submit', e => {
 
     let jsonParse = JSON.parse(stringJSON);
 
-    console.log(jsonParse);
+    console.log(jsonParse);*/
 });
 
